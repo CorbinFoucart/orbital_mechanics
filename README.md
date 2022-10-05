@@ -1,8 +1,8 @@
 # orbital_mechanics
 
-![](https://github.com/CorbinFoucart/orbital_mechanics/blob/main/three_body.gif)
+## time integration of the n-body problem.
 
-Time integration of the n-body problem.
+![](https://github.com/CorbinFoucart/orbital_mechanics/blob/main/three_body.gif)
 
 - Simulation code is written in C++, see `celestial_mechanics.h`,
 `celestial_mechanics.cc`, and the driver code `driver.cc`. Outputs trajectories
