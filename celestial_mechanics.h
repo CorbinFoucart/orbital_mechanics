@@ -46,6 +46,7 @@ template<int dim>
 Vector<dim> operator*(Vector<dim>& v1, double a);
 
 
+// representation of each body in the n-body simulation
 template<int dim>
 struct Body{
     Body(double mass);
@@ -74,7 +75,7 @@ Vector<dim> gravitational_force(Body<dim>& b, Body<dim>& other)
   const double F =  G * b.mass * other.mass / std::pow(r, 2);
   r_hat *= F;
   
-  // scaled by F to be force vector
+  // scaled by F to be force vector (TODO: implement move constructor)
   return r_hat; 
 }
 
@@ -99,6 +100,7 @@ std::ostream& operator<<(std::ostream& os, Vector<dim>& v)
 }
 
 
+// generic abstract base class for time integration
 template<int dim>
 class TimeIntegrator
 {
@@ -122,6 +124,7 @@ class EulerCromerIntegrator : public TimeIntegrator<dim>
 };
 
 
+// class coordinating the simulation
 template<int dim>
 class NBodySimulation
 {
@@ -129,7 +132,8 @@ class NBodySimulation
     NBodySimulation(std::vector<Body<dim>> body_initial_conditions,
                     std::string output_path="");
 
-    // writes current state of the simulation to csv
+    // writes the headers and initial conditions to output_dir/b[n].csv for
+    // each of the n bodies
     void initialize_data_files();
 
     // loops over bodies and updates the resultant forces based on the current
@@ -145,7 +149,7 @@ class NBodySimulation
     // initialize_data_files() has been called
     void run(const double dt, const unsigned int N_timesteps);
 
-    // outputs current state to output_dir
+    // outputs the current state to output_dir/b[n].csv
     void output_to_csv();
 
     std::vector<Body<dim>> bodies;
@@ -153,7 +157,6 @@ class NBodySimulation
 
     std::string output_dir;
     double current_time;
-
 };
 
 } // end namespace celestial
