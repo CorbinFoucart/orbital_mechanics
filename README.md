@@ -6,9 +6,11 @@
 
 - Simulation code is written in C++, see `celestial_mechanics.h`,
 `celestial_mechanics.cc`, and the driver code `driver.cc`. Outputs trajectories
-to CSV file
+to CSV file.
+- Simulation code is templated by space dimension to simultaneously implement
+  both 2D and 3D dynamics in a dimension-independent way.
 - Python code to plot and animate the CSV trajectory output can be found in
-  `animations.ipynb`
+  `animations.ipynb`.
 
 [Some animations.](https://www.youtube.com/playlist?list=PLp3zscdPYH6Hl2GnEIDx_75MrOMpGNeYk)
 
