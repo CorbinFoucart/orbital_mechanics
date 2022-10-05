@@ -12,7 +12,7 @@ to CSV file
 - Python code to plot and animate the CSV trajectory output can be found in
   `animations.ipynb`
 
-![Example animations](https://www.youtube.com/playlist?list=PLp3zscdPYH6Hl2GnEIDx_75MrOMpGNeYk)
+[Example animations](https://www.youtube.com/playlist?list=PLp3zscdPYH6Hl2GnEIDx_75MrOMpGNeYk)
 
 I enjoyed writing this and it helped me get a better feel for n-body dynamics. Pull requests welcome :-)
 
