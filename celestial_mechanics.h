@@ -157,4 +157,3 @@ class NBodySimulation
 };
 
 } // end namespace celestial
-

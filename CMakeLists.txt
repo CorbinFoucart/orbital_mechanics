@@ -19,5 +19,3 @@ if ( NOT CMAKE_BUILD_TYPE)
 endif()
 
 add_custom_target(run COMMAND driver)
-
-

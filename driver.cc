@@ -64,6 +64,7 @@ void ex2_three_body_stationary()
   simulation.run(dt, N_timesteps);
 }
 
+
 //=============================================================================
 // Destabilize ex2 by giving the moons unequal momenta
 //=============================================================================
@@ -128,8 +129,6 @@ void ex4_circular_bodies(const unsigned int N_bodies)
   const double N_timesteps = 13000;
   simulation.run(dt, N_timesteps);
 }
-
-
 
 
 int main()
